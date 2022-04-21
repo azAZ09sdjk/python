@@ -12,8 +12,9 @@ Length = int(input(prompt))
 print("What type of triangle do you want(int or str)")
 TriType =input(prompt)
 
-print("What would the string be (enter anything other than numbers)")
-strtp = input(prompt)
+if TriType == "str":
+    print("What would the string be (enter anything other than numbers)")
+    strtp = input(prompt)
 
 print("printing", Length, "rows")
 
