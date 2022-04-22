@@ -1,4 +1,4 @@
-
+pprompt ="--> "
 
 
 def pyramid(length):
@@ -14,18 +14,18 @@ def pyramid(length):
 flag = True
 newFlag = "" 
 def take_input():
-    prompt = "Enter number please -->"
-    length = int(input(prompt))
+    print ("Enter number please")
+    length = int(input(pprompt))
     k = length - 1
     pyramid(length)
     
 
 while flag:
     take_input()
-    print("Do you want to continue..[y/n]-->")
-    newFlag = str(input(newFlag)) 
-    if newFlag =='y':
-        flag = True
-    else: 
+    print("Press 'Q' to exit.")
+    newFlag = str.upper(input(newFlag)) 
+    if newFlag =='Q':
         flag = False
+    else:
+        print("Idiot option tho barabar dal")    
     newFlag=" "           
