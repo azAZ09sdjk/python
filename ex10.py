@@ -1,14 +1,15 @@
-from traceback import print_tb
+tabby_cat = "\tIm Tabbed in. "
+persian_cat = "Im split\non a line"
+backslash_cat = "Im \\ a \\ cat."
+
+fat_cat = """
+I'll do a list
+\t*Cat food
+\t*Fishies
+\t*Catnip\n\t*Grass"""
 
 
-print("Im gonna try out some escape sentences here")
-
-
-print("Im \\ a \\ cat.")
-
-
-print("Hello \'IDIOT\'")
-
-print("Einstine said\"Common sense is not so common\"")
-
-print("Its littreally just a. \" \a \"")
+print(tabby_cat)
+print(persian_cat)
+print(backslash_cat)
+print(fat_cat)
