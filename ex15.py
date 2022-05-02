@@ -1,10 +1,10 @@
-from sys import addaudithook, argv
+from sys import argv
 
-script,filename = argv
+script, filename = argv
 
 text = open(filename)
 
-print (f"Your files name {filename}:")
+print(f"Your files name {filename}:")
 print(text.read())
 
 print("Type the filename again:")
