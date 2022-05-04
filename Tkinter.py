@@ -13,18 +13,20 @@ def blakbg():
     top.configure(bg='black')
 
 top = Tk()
-top.geometry("600x600")
-redbut = Button(top, text="Red", fg="red", font='Helvetica 10 bold', command=redbg,padx = 50, pady = 50)
-redbut.pack(side=LEFT)
+top.geometry("570x600")
+top.title("Colour changer")
 
-blubut = Button(top, text="Blue", fg="blue", font='Helvetica 10 bold', command=blubg,padx = 50, pady = 50)
-blubut.pack(side=TOP)
+redbut = Button(top, text="Red", fg="red", font='Helvetica 14 bold', command=redbg,padx = 40, pady = 40)
+redbut.pack(side=RIGHT)
 
-grenbut = Button(top, text="Green", fg="green", font='Helvetica 10 bold', command=grenbg,padx = 50, pady = 50)
+blubut = Button(top, text="Blue", fg="blue", font='Helvetica 14 bold', command=blubg,padx = 40, pady = 40)
+blubut.pack(side=RIGHT)
+
+grenbut = Button(top, text="Green", fg="green", font='Helvetica 14 bold', command=grenbg,padx = 40, pady = 40)
 grenbut.pack(side=RIGHT)
 
-blakbut = Button(top, text="Black", fg="black", font='Helvetica 10 bold', command=blakbg,padx = 50, pady = 50)
-blakbut.pack(side=BOTTOM)
+blakbut = Button(top, text="Black", fg="black", font='Helvetica 14 bold', command=blakbg,padx = 40, pady = 40)
+blakbut.pack(side=RIGHT)
 
 top.mainloop()
 
