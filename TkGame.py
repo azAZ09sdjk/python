@@ -1,78 +1,41 @@
-import time
+
+#VERY MUCH INCOMPLETE DOSENT WORK!
+
+
 from tkinter import messagebox
 from tkinter import *
-import threading
-
-money = 0.0
-Invests: float = 0
-Invests_money = 0.0
-time0 = 0
-stopInvest: bool = True
-count = 0
-countlocal = 0
-total_money = 0
 
 
-def timepas():
-    global time0
-    global money
-    global total_money
-    global Invests
-    global Invests_money
-    global stopInvest
-    global countlocal
-    while stopInvest:
-        countlocal = countlocal + 1
-        Invests_money = Invests * 2
-        money = money + Invests_money
-        print(money)
-        time.sleep(1)
-        if countlocal == count:
-            stopInvest = False
-        continue
-
-
+money = 0
+Plants = 0
+PlantCost = 10
+Chair = 0
+ChairCost = 1000
+MoneyPerWork = 1
 
 def work_money():
     global money
-    money += 1
+    money = money + MoneyPerWork
 
 
 def BankAcc():
     global money
-    messagebox.showinfo("Your Bank Account", "You have $:" + str(total_money))
+    messagebox.showinfo("Your Bank Account", "You have $:" + str(money))
 
-
-def Inves():
-    global Invests
+def Plant():
+    global Plants
+    global MoneyPerWork
+    global PlantCost
     global money
-    if money >= 10:
-        Invests = Invests + 1
-        money = money - 10
-        print("Invested")
-        print("Now you have $:", money)
-        print("You have ", Invests, " Invests")
-        print()
-        timepas()
-    elif money < 10:
-        print("You don't have enough money.")
-        print("Tip:Press work to get more money")
+    if PlantCost < money:
+        Plants = Plants+1
+        MoneyPerWork = MoneyPerWork + 1
+        money = money-PlantCost
+        PlantCost = PlantCost * 1.5
+        PlantCost = int(PlantCost)
+        PlantCost.__round__
+        mwm1.config(text="Buy Plant $:" + str(PlantCost), command=Plant)
 
-
-def stop_investing():
-    global count
-    global countlocal
-    global total_money
-    global money
-
-    count = 10
-    countlocal
-    total_money = total_money + money
-
-
-# Threads
-#p = threading.Thread(target=timepas)
-#p.start()
 
 # tkinter stuff
 gamesc = Tk()
@@ -88,9 +51,19 @@ CkBankAcc.pack(side=BOTTOM)
 
 # I can't figure this out Help me
 
-ShareMar = Button(text="Invest in Shares", command=Inves)
-ShareMar.pack(side=LEFT)
-ShareMar1 = Button(text="Invest for 10 Years", command=stop_investing)
-ShareMar1.pack(side=RIGHT)
+mwm1 = Button(text="Buy Plant $:" + str(PlantCost), command=Plant)
+mwm1.pack(side=LEFT)
+
+mwm2 = Button(text="Buy Chair $:" + str(ChairCost), command=Chair)
+
+
 
 gamesc.mainloop()
+
+list4 = [12, 1.23, 69, "Funny number", False]
+print(list4)
+
+
+while money == 1000 or money > 1000:
+    mwm2.pack(side=LEFT, pady=20)
+    continue
